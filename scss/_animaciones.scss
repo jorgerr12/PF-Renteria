@@ -1,4 +1,7 @@
 
+$delay: 1s;
+$duration: 600ms;
+
 @mixin FadeIn($opacity,$transform){
     opacity: $opacity;
     transform: $transform;
@@ -37,20 +40,20 @@
 
 .FadeInDown{
     animation-name: FadeInDown;
-    animation-duration: 1s;
-    animation-delay: 600ms;
+    animation-duration: $delay;
+    animation-delay: $duration;
     animation-fill-mode: both;
 }
 .FadeInLeft{
     animation-name: FadeInLeft;
-    animation-duration: 1s;
-    animation-delay: 600ms;
+    animation-duration: $delay;
+    animation-delay: $duration;
     animation-fill-mode: both;
 }
 .FadeInRight{
     animation-name: FadeInRight;
-    animation-duration: 1s;
-    animation-delay: 600ms;
+    animation-duration: $delay;
+    animation-delay: $duration;
     animation-fill-mode: both;
 }
 

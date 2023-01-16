@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
 @import '_animaciones';
-
+$fontMain: 'Open Sans', sans-serif;
+$MainColor: #0cb8b6;
+$FondoColor:#f1f1f1;
 * {
-    font-family: 'Open Sans', sans-serif;
+    font-family: $fontMain;
     /*familia tipográfica*/
     margin: 0;
     padding: 0;
 }
 
 #menu {
-    img{
+    img {
         width: 180px;
     }
 }
@@ -23,7 +25,7 @@ body {
 
 }
 
-nav{
+nav {
     position: sticky;
     background-color: white;
     max-width: 1160px;
@@ -35,10 +37,16 @@ nav{
 }
 
 
-#menu ul li a:hover {
-    transform: scale(1.10);
-    transition: all 1s;
-    color: #0cb8b6;
+#menu {
+    ul {
+        li {
+            a:hover {
+                transform: scale(1.10);
+                transition: all 1s;
+                color: $MainColor;
+            }
+        }
+    }
 }
 
 
@@ -67,7 +75,7 @@ section {
 
 footer {
     position: sticky;
-    background-color: #0cb8b6;
+    background-color: $MainColor;
     margin: auto;
     padding: 30px;
     display: flex;
@@ -88,6 +96,7 @@ footer {
     text-align: center;
     margin: 35px;
     font-size: x-large;
+
     p {
         font-size: medium;
         color: #444;
@@ -96,7 +105,7 @@ footer {
 
 
 .backgroun-gris {
-    background-color: #f1f1f1;
+    background-color: $FondoColor;
     padding: 50px;
 }
 
@@ -104,9 +113,11 @@ footer {
     .social {
         font-size: small;
     }
+
     .icon {
-        font-size: small;
+        @extend .social;
     }
+
     .card {
         margin-bottom: 30px;
         text-align: -webkit-center;
@@ -115,8 +126,10 @@ footer {
 
 
 
-form input {
-    height: 40px;
+form {
+    input {
+        height: 40px;
+    }
 }
 
 input,
@@ -129,12 +142,12 @@ textarea {
 
 input,
 textarea:focus {
-    box-shadow: 0 0 2px #0cb8b6 inset
+    box-shadow: 0 0 2px $MainColor inset
 }
 
 .btn-sucsess {
     color: #fff;
-    background-color: #0cb8b6;
+    background-color: $MainColor;
     font-weight: 700;
     cursor: pointer;
 }
@@ -147,22 +160,30 @@ textarea:focus {
     width: 120px;
 }
 
-#servicios h3,
-#valores h3 {
-    color: #0cb8b6;
+#servicios 
+{
+    h3 {
+        color: $MainColor;
+    }
+    .group {
+        align-items: center;
+    }
 }
+#valores{
+    h3 {
+        color: $MainColor;
+    }
 
-#valores article p {
-    text-align: left;
-}
+    article{
+        p {
+            text-align: left;
+        }
+    }
+} 
 
 .text-left {
     text-align: left;
 
-}
-
-#servicios .group {
-    align-items: center;
 }
 
 .image {
@@ -177,9 +198,12 @@ textarea:focus {
     cursor: pointer;
 }
 
-.logo img{
-    width: 100%;
+.logo {
+    img {
+        width: 100%;
+    }
 }
-.banner img{
-    width: 100%;
+
+.banner {
+    @extend .logo;
 }
